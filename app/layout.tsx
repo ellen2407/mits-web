@@ -62,7 +62,7 @@ export default function RootLayout({
                 }}
               >
                 <li><a href="#hero" style={linkStyle}>Start</a></li>
-                <li><a href="#about" style={linkStyle}>Über mich</a></li>
+                <li><a href="#about" style={linkStyle}>Über uns</a></li>
                 <li><a href="#offer" style={linkStyle}>Angebot</a></li>
                 <li><a href="#booking" style={linkStyle}>Termin buchen</a></li>
               </ul>
