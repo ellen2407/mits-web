@@ -9,37 +9,43 @@ export default function RootLayout({
 }) {
   const [open, setOpen] = useState(true);
 
+  const SIDEBAR_OPEN = 180;   // px
+  const SIDEBAR_CLOSED = 60; // px
+  const CONTENT_GAP = 16;    // ≈ 2 cm Abstand zur Sidebar
+
+  const sidebarWidth = open ? SIDEBAR_OPEN : SIDEBAR_CLOSED;
+
   return (
-    <html lang="de">
+    <html lang="de" style={{ scrollBehavior: "smooth" }}>
       <body
         style={{
           margin: 0,
-          display: "flex",
           minHeight: "100vh",
-          scrollBehavior: "smooth", // Smooth scroll beim Klick
+          background: "#fff",
         }}
       >
         {/* Sidebar */}
         <aside
           style={{
-            width: open ? "220px" : "60px",
-            background: "#111",
-            color: "#fff",
-            padding: "1rem",
-            transition: "width 0.2s",
             position: "fixed",
+            top: 0,
+            left: 0,
+            width: sidebarWidth,
             height: "100vh",
+            padding: "24px 16px",
+            boxSizing: "border-box",
+            background: "#fff",
+            borderRight: "1px solid #e5e5e5",
           }}
         >
           <button
             onClick={() => setOpen(!open)}
             style={{
               background: "none",
-              color: "#fff",
               border: "none",
-              fontSize: "1.2rem",
               cursor: "pointer",
-              marginBottom: "1rem",
+              fontSize: "20px",
+              marginBottom: "24px",
             }}
           >
             ☰
@@ -47,22 +53,18 @@ export default function RootLayout({
 
           {open && (
             <nav>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  <a href="#willkommen">Willkommen</a>
-                </li>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  <a href="#ueber-uns">Über uns</a>
-                </li>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  <a href="#angebote">Angebote</a>
-                </li>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  <a href="#termin-buchen">Termin buchen</a>
-                </li>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  <a href="#kontakt">Kontakt</a>
-                </li>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  lineHeight: "2",
+                }}
+              >
+                <li><a href="#hero" style={linkStyle}>Start</a></li>
+                <li><a href="#about" style={linkStyle}>Über mich</a></li>
+                <li><a href="#offer" style={linkStyle}>Angebot</a></li>
+                <li><a href="#booking" style={linkStyle}>Termin buchen</a></li>
               </ul>
             </nav>
           )}
@@ -71,9 +73,9 @@ export default function RootLayout({
         {/* Content */}
         <main
           style={{
-            flex: 1,
-            marginLeft: open ? "220px" : "60px",
-            padding: "2rem",
+            marginLeft: sidebarWidth + CONTENT_GAP,
+            padding: "64px 48px",
+            boxSizing: "border-box",
           }}
         >
           {children}
@@ -82,3 +84,9 @@ export default function RootLayout({
     </html>
   );
 }
+
+const linkStyle: React.CSSProperties = {
+  textDecoration: "none",
+  color: "#000",
+  display: "block",
+};
