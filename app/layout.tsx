@@ -11,7 +11,14 @@ export default function RootLayout({
 
   return (
     <html lang="de">
-      <body style={{ margin: 0, display: "flex", minHeight: "100vh" }}>
+      <body
+        style={{
+          margin: 0,
+          display: "flex",
+          minHeight: "100vh",
+          scrollBehavior: "smooth", // Smooth scroll beim Klick
+        }}
+      >
         {/* Sidebar */}
         <aside
           style={{
@@ -20,6 +27,8 @@ export default function RootLayout({
             color: "#fff",
             padding: "1rem",
             transition: "width 0.2s",
+            position: "fixed",
+            height: "100vh",
           }}
         >
           <button
@@ -39,18 +48,34 @@ export default function RootLayout({
           {open && (
             <nav>
               <ul style={{ listStyle: "none", padding: 0 }}>
-                <li><a href="/willkommen">Willkommen</a></li>
-                <li><a href="/ueber-uns">Über uns</a></li>
-                <li><a href="/angebote">Angebote</a></li>
-                <li><a href="/termin-buchen">Termin buchen</a></li>
-                <li><a href="/kontakt">Kontakt</a></li>
+                <li style={{ marginBottom: "0.5rem" }}>
+                  <a href="#willkommen">Willkommen</a>
+                </li>
+                <li style={{ marginBottom: "0.5rem" }}>
+                  <a href="#ueber-uns">Über uns</a>
+                </li>
+                <li style={{ marginBottom: "0.5rem" }}>
+                  <a href="#angebote">Angebote</a>
+                </li>
+                <li style={{ marginBottom: "0.5rem" }}>
+                  <a href="#termin-buchen">Termin buchen</a>
+                </li>
+                <li style={{ marginBottom: "0.5rem" }}>
+                  <a href="#kontakt">Kontakt</a>
+                </li>
               </ul>
             </nav>
           )}
         </aside>
 
         {/* Content */}
-        <main style={{ flex: 1, padding: "2rem" }}>
+        <main
+          style={{
+            flex: 1,
+            marginLeft: open ? "220px" : "60px",
+            padding: "2rem",
+          }}
+        >
           {children}
         </main>
       </body>
