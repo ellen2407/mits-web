@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <>
@@ -53,10 +55,10 @@ export default function Home() {
         </p>
         <ul style={{ marginLeft: "20px", lineHeight: 1.6 }}>
           <li>IHK-zertifizierte Berater für Unternehmensnachfolge</li>
-          <li>Testmanagement ISTQB Certified Advanced Level Testmanager</li>
-          <li>Softwaretestautomatisierung Certified Professional TOSCA</li>
-          <li>Projektmanagement klassisch, Scrum, Kanban, hybrid, agil</li>
-          <li>Process Analyst/Manager/Automation UIPath certified professional RPA Developer</li>
+          <li>ISTQB Certified Advanced Level Testmanager</li>
+          <li>Certified Professional TOSCA</li>
+          <li>Projektmanagement klassisch, agil & hybrid</li>
+          <li>UIPath certified RPA Developer</li>
         </ul>
       </section>
 
@@ -69,7 +71,10 @@ export default function Home() {
           margin: "0 auto",
         }}
       >
-        <h2 style={{ marginBottom: "40px", textAlign: "center" }}>Unser Team</h2>
+        <h2 style={{ marginBottom: "40px", textAlign: "center" }}>
+          Unser Team
+        </h2>
+
         <div
           style={{
             display: "flex",
@@ -80,12 +85,12 @@ export default function Home() {
         >
           {/* Heinz */}
           <div style={{ textAlign: "center", maxWidth: "220px" }}>
-            <img
+            <Image
               src="/images/heinz_webseite.jpg"
               alt="Heinz Rabauer"
+              width={180}
+              height={180}
               style={{
-                width: "180px",
-                height: "180px",
                 borderRadius: "50%",
                 objectFit: "cover",
                 marginBottom: "16px",
@@ -93,19 +98,19 @@ export default function Home() {
             />
             <h3 style={{ marginBottom: "8px" }}>Heinz Rabauer</h3>
             <p style={{ margin: 0 }}>
-              M.Sc. Betriebswirtschaftslehre<br/>
+              M.Sc. Betriebswirtschaftslehre<br />
               Berater für Unternehmensnachfolge & Finanzexperte
             </p>
           </div>
 
           {/* Ellen */}
           <div style={{ textAlign: "center", maxWidth: "220px" }}>
-            <img
+            <Image
               src="/images/ellen_webseite.jpg"
               alt="Ellen Häfele"
+              width={180}
+              height={180}
               style={{
-                width: "180px",
-                height: "180px",
                 borderRadius: "50%",
                 objectFit: "cover",
                 marginBottom: "16px",
@@ -113,19 +118,19 @@ export default function Home() {
             />
             <h3 style={{ marginBottom: "8px" }}>Ellen Häfele</h3>
             <p style={{ margin: 0 }}>
-              B.A. Sozialwirtschaft<br/>
+              B.A. Sozialwirtschaft<br />
               Berater für Unternehmensnachfolge
             </p>
           </div>
 
-          {/* Maximilian */}
+          {/* Max */}
           <div style={{ textAlign: "center", maxWidth: "220px" }}>
-            <img
+            <Image
               src="/images/max_webseite.jpg"
               alt="Maximilian"
+              width={180}
+              height={180}
               style={{
-                width: "180px",
-                height: "180px",
                 borderRadius: "50%",
                 objectFit: "cover",
                 marginBottom: "16px",
@@ -133,7 +138,7 @@ export default function Home() {
             />
             <h3 style={{ marginBottom: "8px" }}>Maximilian</h3>
             <p style={{ margin: 0 }}>
-              B.Sc. Wirtschaftsinformatik<br/>
+              B.Sc. Wirtschaftsinformatik<br />
               Projektmanager & Softwaretester
             </p>
           </div>
