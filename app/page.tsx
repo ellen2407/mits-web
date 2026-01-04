@@ -8,15 +8,17 @@ export default function Home() {
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#f5f5f5",
           borderBottom: "1px solid #eee",
-          padding: "2rem",
+          padding: "0 2rem",
         }}
       >
-        <div style={{ maxWidth: "900px" }}>
+        <div style={{ maxWidth: "900px", textAlign: "center" }}>
           <h1 style={{ fontSize: "48px", marginBottom: "24px" }}>
             Ihr Lebenswerk verdient eine glänzende Zukunft.
           </h1>
-          <p style={{ fontSize: "20px", lineHeight: "1.6", marginBottom: "32px" }}>
+          <p style={{ fontSize: "20px", lineHeight: 1.6, marginBottom: "40px" }}>
             Wir begleiten Sie Schritt für Schritt bei der Übergabe, sodass Ihre Arbeit langfristig Wirkung zeigt.
           </p>
           <a
@@ -28,6 +30,7 @@ export default function Home() {
               textDecoration: "none",
               color: "#000",
               fontWeight: 500,
+              borderRadius: "6px",
             }}
           >
             Kostenloses Orientierungsgespräch
@@ -39,91 +42,105 @@ export default function Home() {
       <section
         id="about"
         style={{
-          paddingTop: "120px",
-          paddingBottom: "120px",
+          padding: "40px 2rem 20px",
+          maxWidth: "900px",
+          margin: "0 auto",
+        }}
+      >
+        <h2 style={{ marginBottom: "16px" }}>Über uns</h2>
+        <p style={{ marginBottom: "16px" }}>
+          Wir sind ein Familienunternehmen aus Bayern, gegründet 2022. Unser Team besteht aktuell aus drei Experten, die gemeinsam für eine erfolgreiche Unternehmensnachfolge stehen:
+        </p>
+        <ul style={{ marginLeft: "20px", lineHeight: 1.6 }}>
+          <li>IHK-zertifizierte Berater für Unternehmensnachfolge</li>
+          <li>Testmanagement ISTQB Certified Advanced Level Testmanager</li>
+          <li>Softwaretestautomatisierung Certified Professional TOSCA</li>
+          <li>Projektmanagement klassisch, Scrum, Kanban, hybrid, agil</li>
+          <li>Process Analyst/Manager/Automation UIPath certified professional RPA Developer</li>
+        </ul>
+      </section>
+
+      {/* TEAM */}
+      <section
+        id="team"
+        style={{
+          padding: "20px 2rem 80px",
           maxWidth: "1200px",
           margin: "0 auto",
         }}
       >
-        <h2 style={{ marginBottom: "24px" }}>Über uns</h2>
-
-        <p style={{ marginBottom: "16px" }}>
-          Wir sind ein Familienunternehmen aus Bayern, gegründet 2022, mit aktuell 3 Mitarbeitern. 
-          Unsere Mission: Inhaber bei der geordneten Unternehmensnachfolge begleiten und langfristig Wirkung sichern.
-        </p>
-
-        <h3 style={{ marginTop: "32px", marginBottom: "16px" }}>Firmenhistorie & Zertifikate</h3>
-        <ul style={{ marginBottom: "32px" }}>
-          <li>IHK-zertifizierte Berater für Unternehmensnachfolge</li>
-          <li>Testmanagement ISTQB Certified Advanced Level Testmanager</li>
-          <li>Testkoordinator ISTQB CTFL Agile Extension</li>
-          <li>Softwaretestautomatisierung Certified Professional TOSCA</li>
-          <li>Projektleitung/Projektmanagement klassisch, Scrum, Kanban, hybrid, agile</li>
-          <li>Process Analyst/Manager/Automation UIPath Certified Professional RPA Developer</li>
-        </ul>
-
-        <h3 style={{ marginBottom: "24px" }}>Unser Team</h3>
+        <h2 style={{ marginBottom: "40px", textAlign: "center" }}>Unser Team</h2>
         <div
           style={{
             display: "flex",
-            gap: "32px",
+            justifyContent: "space-around",
             flexWrap: "wrap",
+            gap: "40px",
           }}
         >
-          {/* Mitarbeiter 1 */}
-          <div style={{ flex: "1 1 250px", textAlign: "center" }}>
-            <div
+          {/* Heinz */}
+          <div style={{ textAlign: "center", maxWidth: "220px" }}>
+            <img
+              src="/images/heinz_webseite.jpg"
+              alt="Heinz Rabauer"
               style={{
-                width: "150px",
-                height: "150px",
+                width: "180px",
+                height: "180px",
                 borderRadius: "50%",
-                background: "#eee",
-                margin: "0 auto 16px",
+                objectFit: "cover",
+                marginBottom: "16px",
               }}
-            >
-              {/* Platz für Bild Ellen */}
-            </div>
-            <h4>Ellen Häfele</h4>
-            <p>B.A. Sozialwirtschaft, Beraterin für Unternehmensnachfolge</p>
+            />
+            <h3 style={{ marginBottom: "8px" }}>Heinz Rabauer</h3>
+            <p style={{ margin: 0 }}>
+              M.Sc. Betriebswirtschaftslehre<br/>
+              Berater für Unternehmensnachfolge & Finanzexperte
+            </p>
           </div>
 
-          {/* Mitarbeiter 2 */}
-          <div style={{ flex: "1 1 250px", textAlign: "center" }}>
-            <div
+          {/* Ellen */}
+          <div style={{ textAlign: "center", maxWidth: "220px" }}>
+            <img
+              src="/images/ellen_webseite.jpg"
+              alt="Ellen Häfele"
               style={{
-                width: "150px",
-                height: "150px",
+                width: "180px",
+                height: "180px",
                 borderRadius: "50%",
-                background: "#eee",
-                margin: "0 auto 16px",
+                objectFit: "cover",
+                marginBottom: "16px",
               }}
-            >
-              {/* Platz für Bild Maximilian */}
-            </div>
-            <h4>Maximilian</h4>
-            <p>Projektmanager & Softwaretester, B.Sc. Wirtschaftsinformatik</p>
+            />
+            <h3 style={{ marginBottom: "8px" }}>Ellen Häfele</h3>
+            <p style={{ margin: 0 }}>
+              B.A. Sozialwirtschaft<br/>
+              Berater für Unternehmensnachfolge
+            </p>
           </div>
 
-          {/* Mitarbeiter 3 */}
-          <div style={{ flex: "1 1 250px", textAlign: "center" }}>
-            <div
+          {/* Maximilian */}
+          <div style={{ textAlign: "center", maxWidth: "220px" }}>
+            <img
+              src="/images/max_webseite.jpg"
+              alt="Maximilian"
               style={{
-                width: "150px",
-                height: "150px",
+                width: "180px",
+                height: "180px",
                 borderRadius: "50%",
-                background: "#eee",
-                margin: "0 auto 16px",
+                objectFit: "cover",
+                marginBottom: "16px",
               }}
-            >
-              {/* Platz für Bild Heinz */}
-            </div>
-            <h4>Heinz Rabauer</h4>
-            <p>Berater Unternehmensnachfolge & Finanzexperte, M.Sc. Betriebswirtschaft</p>
+            />
+            <h3 style={{ marginBottom: "8px" }}>Maximilian</h3>
+            <p style={{ margin: 0 }}>
+              B.Sc. Wirtschaftsinformatik<br/>
+              Projektmanager & Softwaretester
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Angebot */}
+      {/* ANGEBOT */}
       <section
         id="offer"
         style={{
@@ -139,7 +156,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Termin buchen */}
+      {/* TERMIN */}
       <section
         id="booking"
         style={{
@@ -150,9 +167,7 @@ export default function Home() {
         }}
       >
         <h2>Termin buchen</h2>
-        <p>
-          Hier wird im nächsten Schritt Calendly eingebunden.
-        </p>
+        <p>Hier wird im nächsten Schritt Calendly eingebunden.</p>
       </section>
     </>
   );

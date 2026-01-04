@@ -90,3 +90,6 @@ const linkStyle: React.CSSProperties = {
   color: "#000",
   display: "block",
 };
+<li>
+  <a href="/mausigkeit">Mausigkeit</a>
+</li>
