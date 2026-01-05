@@ -1,95 +1,50 @@
-"use client";
+import "./globals.css";
+import Link from "next/link";
 
-import { useState } from "react";
+export const metadata = {
+  title: "MITS Web",
+  description: "Unternehmensnachfolge",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [open, setOpen] = useState(true);
-
-  const SIDEBAR_OPEN = 180;   // px
-  const SIDEBAR_CLOSED = 60; // px
-  const CONTENT_GAP = 16;    // ≈ 2 cm Abstand zur Sidebar
-
-  const sidebarWidth = open ? SIDEBAR_OPEN : SIDEBAR_CLOSED;
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" style={{ scrollBehavior: "smooth" }}>
-      <body
-        style={{
-          margin: 0,
-          minHeight: "100vh",
-          background: "#fff",
-        }}
-      >
+    <html lang="de">
+      <body style={{
+        display: "flex",
+        minHeight: "100vh",
+        margin: 0,
+        backgroundColor: "#fff",
+        color: "#000",
+        fontFamily: "Arial, sans-serif"
+      }}>
         {/* Sidebar */}
-        <aside
+        <nav
           style={{
+            width: "200px",
+            backgroundColor: "#fff",
+            borderRight: "1px solid #eee",
+            padding: "20px",
+            boxSizing: "border-box",
             position: "fixed",
             top: 0,
             left: 0,
-            width: sidebarWidth,
             height: "100vh",
-            padding: "24px 16px",
-            boxSizing: "border-box",
-            background: "#fff",
-            borderRight: "1px solid #e5e5e5",
           }}
         >
-          <button
-            onClick={() => setOpen(!open)}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontSize: "20px",
-              marginBottom: "24px",
-            }}
-          >
-            ☰
-          </button>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <li style={{ marginBottom: "16px" }}><Link href="/#hero">Home</Link></li>
+            <li style={{ marginBottom: "16px" }}><Link href="/#about">Über uns</Link></li>
+            <li style={{ marginBottom: "16px" }}><Link href="/#team">Team</Link></li>
+            <li style={{ marginBottom: "16px" }}><Link href="/#offer">Angebot</Link></li>
+            <li style={{ marginBottom: "16px" }}><Link href="/#booking">Termin</Link></li>
+          </ul>
+        </nav>
 
-          {open && (
-            <nav>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  lineHeight: "2",
-                }}
-              >
-                <li><a href="#hero" style={linkStyle}>Start</a></li>
-                <li><a href="#about" style={linkStyle}>Über uns</a></li>
-                <li><a href="#offer" style={linkStyle}>Angebot</a></li>
-                <li><a href="#booking" style={linkStyle}>Termin buchen</a></li>
-              </ul>
-            </nav>
-          )}
-        </aside>
-
-        {/* Content */}
-        <main
-          style={{
-            marginLeft: sidebarWidth + CONTENT_GAP,
-            padding: "64px 48px",
-            boxSizing: "border-box",
-          }}
-        >
+        {/* Main Content */}
+        <main style={{ marginLeft: "200px", flex: 1, padding: "20px", boxSizing: "border-box" }}>
           {children}
         </main>
       </body>
     </html>
   );
 }
-
-const linkStyle: React.CSSProperties = {
-  textDecoration: "none",
-  color: "#000",
-  display: "block",
-};
-<li>
-  <a href="/mausigkeit">Mausigkeit</a>
-</li>
